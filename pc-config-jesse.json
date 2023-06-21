@@ -1,0 +1,6 @@
+{
+	"gpu": "NVIDIA GeForce RTX 3070",
+	"gpu_max_temp": 93,
+	"cpu": "AMD Ryzen 5 5600X",
+	"cpu_max_temp": 95
+}
