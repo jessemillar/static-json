@@ -1,0 +1,6 @@
+{
+	"gpu": "NVIDIA GeForce RTX 2070 SUPER",
+	"gpu_max_temp": 88,
+	"cpu": "Intel Core i7-10700K",
+	"cpu_max_temp": 100
+}
