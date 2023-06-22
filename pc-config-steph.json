@@ -1,6 +1,6 @@
 {
-	"cpu": "Intel Core i7-10700K",
+	"cpu": "13th Gen Intel Core i9-13900K",
 	"cpu_max_temp": 100,
-	"gpu": "NVIDIA GeForce RTX 2070 SUPER",
-	"gpu_max_temp": 88
+	"gpu": "NVIDIA GeForce RTX 4090",
+	"gpu_max_temp": 90
 }
