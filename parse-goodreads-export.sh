@@ -1,10 +1,7 @@
 #!/bin/bash
 
-# Count the number of lines in the CSV file
-line_count=$(wc -l < goodreads_library_export.csv)
-
-# Subtract 1 to exclude the header row
-books_read=$((line_count - 1))
+# Count the number of lines in the CSV file where the "Exclusive Shelf" column is "read"
+books_read=$(awk -F, 'NR > 1 && $19 == "read"' goodreads_library_export.csv | wc -l)
 
 # Create a JSON object and write it to goodreads.json
 echo "{\"books_read\": $books_read}" > goodreads.json
