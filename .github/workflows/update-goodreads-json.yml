@@ -1,0 +1,30 @@
+name: Update Goodreads JSON
+
+on:
+  push:
+    branches:
+      - main # or the branch you want to monitor
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Run parse-goodreads-export.sh
+        run: bash parse-goodreads-export.sh
+
+      - name: Commit changes
+        run: |
+          git add goodreads.json
+          git commit -m "Update goodreads.json"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
