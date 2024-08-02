@@ -21,7 +21,17 @@ jobs:
       - name: Run parse-goodreads-export.sh
         run: bash parse-goodreads-export.sh
 
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changes=true" >> $GITHUB_ENV
+          else
+            echo "changes=false" >> $GITHUB_ENV
+          fi
+
       - name: Commit changes
+        if: env.changes == 'true'
         run: |
           git add goodreads.json
           git commit -m "Update goodreads.json"
