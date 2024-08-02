@@ -35,6 +35,4 @@ jobs:
         run: |
           git add goodreads.json
           git commit -m "Update goodreads.json"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          git push https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}.git
