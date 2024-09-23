@@ -8,4 +8,4 @@ When setting up the Action for this repo, generate a fine-grained token with "Co
 
 ## Goodreads
 
-To update Goodreads, [go here](https://www.goodreads.com/review/import), click "Export library" to export the .csv of my reading history, then manually upload that .csv to this repo. A GitHub Action will automatically trigger that will update the JSON value counting how many books I've read.
+To update Goodreads, [go here](https://www.goodreads.com/review/import), click "Export library" to generate a .csv of my reading history, click "Your export..." to download it, then you'll need to manually upload that .csv to this repo. A GitHub Action will automatically trigger that will update the JSON value counting how many books I've read.
